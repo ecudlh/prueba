@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Probar Cámara</title>
+</head>
+<body>
+  <button id="takePhoto">Abrir cámara</button>
+  <input type="file" id="cameraInput" accept="image/*" capture="environment" style="display:none" />
+  <script>
+    document.getElementById("takePhoto").addEventListener("click", function () {
+      document.getElementById("cameraInput").click();
+    });
+    document.getElementById("cameraInput").addEventListener("change", function (event) {
+      const file = event.target.files[0];
+      if (file) {
+        alert("Foto seleccionada: " + file.name);
+      }
+    });
+  </script>
+</body>
+</html>
